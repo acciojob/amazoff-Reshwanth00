@@ -25,7 +25,8 @@ public class OrderRepository {
     }
 
     public void addOrderPartnerPair(String orderId, String partnerId) {
-        List<String> list = pairs.containsKey(partnerId)?pairs.get(partnerId):null;
+        List<String> list = pairs.getOrDefault(partnerId, null);
+        assert list != null;
         list.add(orderId);
         Order order = orders.get(orderId);
         order.setPartner(partnerId);
@@ -38,11 +39,11 @@ public class OrderRepository {
     }
 
     public Order getOrderById(String orderId) {
-        return orders.containsKey(orderId)?orders.get(orderId):null;
+        return orders.getOrDefault(orderId, null);
     }
 
     public DeliveryPartner getPartnerById(String partnerId) {
-        return partners.containsKey(partnerId)?partners.get(partnerId):null;
+        return partners.getOrDefault(partnerId, null);
     }
 
     public List<String> getOrdersByPartnerId(String partnerId) {
@@ -77,7 +78,7 @@ public class OrderRepository {
         orders.remove(orderId);
         List<String> list = pairs.get(partnerId);
         for(int i=0;i<list.size();i++){
-            if(list.get(i)==orderId){
+            if(list.get(i).equals(orderId)){
                 list.remove(i);
                 break;
             }

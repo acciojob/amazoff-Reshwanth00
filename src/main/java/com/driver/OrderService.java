@@ -3,9 +3,7 @@ package com.driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class OrderService {
@@ -54,8 +52,8 @@ public class OrderService {
         int totalTime = Integer.parseInt(clock[0])*60;
         totalTime+=Integer.parseInt(clock[1]);
         int count=0;
-        for(int i=0;i<list.size();i++){
-            if(getOrderById(list.get(i)).getDeliveryTime()<totalTime){
+        for (String s : list) {
+            if (getOrderById(s).getDeliveryTime() < totalTime) {
                 count++;
             }
         }
@@ -80,9 +78,6 @@ public class OrderService {
     }
 
     public boolean check(String partnerId) {
-        if(getPartnerById(partnerId)!=null){
-            return true;
-        }
-        return false;
+        return getPartnerById(partnerId) != null;
     }
 }
