@@ -14,17 +14,17 @@ public class Application {
 	}
 }
 /*
-Error:    TestCases.testAddOrder:                           30 » NullPointer
-Error:    TestCases.testAddOrderPartnerPair:                58 » NullPointer
-Error:    TestCases.testAddPartner:                         39 » NullPointer
-Error:    TestCases.testDeletePartnerById:                  644 » NullPointer
-Error:    TestCases.testGetAllOrders:                       324 » NullPointer
-Error:    TestCases.testGetCountOfOrdersLeftAfterGivenTime: 536 » NullPointer
-Error:    TestCases.testGetCountOfUnassignedOrders:         394 » NullPointer
-Error:    TestCases.testGetLastDeliveryTime:                598 » NullPointer
-Error:    TestCases.testGetOrderById:                       93 » NullPointer
-Error:    TestCases.testGetOrderCountByPartnerId:           198 » NullPointer
-Error:    TestCases.testGetOrdersByPartnerId:               244 » NullPointer
-Error:    TestCases.testGetPartnerById:                     147 » NullPointer
-Error:    TestCases.testOrderController:                    689 » NullPointer
+Error:    TestCases.testAddOrder:                           30           » NullPointer
+Error:    TestCases.testAddOrderPartnerPair:                58           » NullPointer
+Error:    TestCases.testAddPartner:                         39           » NullPointer
+Error:    TestCases.testDeletePartnerById:                  644          » NullPointer
+Error:    TestCases.testGetAllOrders:                       324          » NullPointer
+Error:    TestCases.testGetCountOfOrdersLeftAfterGivenTime: 536          » NullPointer
+Error:    TestCases.testGetCountOfUnassignedOrders:         394          » NullPointer
+Error:    TestCases.testGetLastDeliveryTime:                598          » NullPointer
+Error:    TestCases.testGetOrderById:                       93           » NullPointer
+Error:    TestCases.testGetOrderCountByPartnerId:           198          » NullPointer
+Error:    TestCases.testGetOrdersByPartnerId:               244          » NullPointer
+Error:    TestCases.testGetPartnerById:                     147          » NullPointer
+Error:    TestCases.testOrderController:                    689          » NullPointer
  */
