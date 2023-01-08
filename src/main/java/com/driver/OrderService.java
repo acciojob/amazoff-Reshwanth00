@@ -40,12 +40,7 @@ public class OrderService {
     }
 
     public Integer getCountOfUnassignedOrders() {
-        try{
             return orderRepository.getCountOfUnassignedOrders();
-        }
-        catch(NullPointerException e){
-            return 0;
-        }
     }
 
     public Integer getOrdersLeftAfterGivenTimeByPartnerId(String time, String partnerId) {

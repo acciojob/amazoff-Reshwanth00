@@ -46,14 +46,7 @@ public class OrderController {
     }
     @GetMapping("/get-order-count-by-partner-id/{partnerId}")
     public ResponseEntity<Integer> getOrderCountByPartnerId(@PathVariable String partnerId){
-        Integer orderCount = 0;
-        try{
-            orderCount = orderService.getOrderCountByPartnerId(partnerId);
-        }
-        catch(NullPointerException e){
-            orderCount = 0;
-        }
-
+        Integer orderCount = orderService.getOrderCountByPartnerId(partnerId);
         return new ResponseEntity<>(orderCount, HttpStatus.CREATED);
     }
     @GetMapping("/get-orders-by-partner-id/{partnerId}")
@@ -70,13 +63,7 @@ public class OrderController {
 
     @GetMapping("/get-count-of-unassigned-orders")
     public ResponseEntity<Integer> getCountOfUnassignedOrders(){
-        Integer countOfOrders = 0;
-        try{
-            countOfOrders=orderService.getCountOfUnassignedOrders();
-        }
-        catch (NullPointerException e){
-            countOfOrders=0;
-        }
+        Integer countOfOrders=orderService.getCountOfUnassignedOrders();
         return new ResponseEntity<>(countOfOrders, HttpStatus.CREATED);
     }
 

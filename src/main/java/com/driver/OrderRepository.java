@@ -55,18 +55,13 @@ public class OrderRepository {
     }
 
     public Integer getCountOfUnassignedOrders() {
-        try {
-            int count = 0;
-            for (Map.Entry<String, Boolean> itr : status.entrySet()) {
-                if (!itr.getValue()) {
-                    count++;
-                }
+        int count = 0;
+        for (Map.Entry<String, Boolean> itr : status.entrySet()) {
+            if (!itr.getValue()) {
+                count++;
             }
-            return count;
         }
-        catch(NullPointerException e){
-            return 0;
-        }
+        return count;
     }
 
     public void deletePartnerById(String partnerId) {
