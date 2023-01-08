@@ -78,4 +78,11 @@ public class OrderService {
     public void deleteOrderById(String orderId) {
         orderRepository.deleteOrderById(orderId);
     }
+
+    public boolean check(String partnerId) {
+        if(getPartnerById(partnerId)!=null){
+            return true;
+        }
+        return false;
+    }
 }
