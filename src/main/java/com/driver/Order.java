@@ -1,28 +1,18 @@
 package com.driver;
-
 public class Order {
 
     private String id;
     private int deliveryTime;
-    private String partner;
+
     public Order(String id, String deliveryTime) {
-        this.id=id;
-        String [] time = deliveryTime.split(":");
-        this.deliveryTime=Integer.parseInt(time[0])*60;
-        this.deliveryTime+=Integer.parseInt(time[1]);
+        this.id = id;
+        int time = Integer.parseInt(deliveryTime.substring(0, 2)) * 60 + Integer.parseInt(deliveryTime.substring(3));
+        this.deliveryTime = time;
     }
-
-    public String getPartner() {
-        return partner;
-    }
-
-    public void setPartner(String partner) {
-        this.partner = partner;
-    }
-
     public String getId() {
         return id;
     }
-
-    public int getDeliveryTime() {return deliveryTime;}
+    public int getDeliveryTime() {
+        return deliveryTime;
+    }
 }
