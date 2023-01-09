@@ -26,7 +26,7 @@ public class OrderService {
         return orderRepository.getPartnerById(partnerId);
     }
 
-    public Integer getOrderCountByPartnerId(String partnerId) {
+    public int getOrderCountByPartnerId(String partnerId) {
         return orderRepository.getPartnerById(partnerId).getNumberOfOrders();
     }
 
@@ -38,11 +38,11 @@ public class OrderService {
         return orderRepository.getAllOrders();
     }
 
-    public Integer getCountOfUnassignedOrders() {
+    public int getCountOfUnassignedOrders() {
             return orderRepository.getCountOfUnassignedOrders();
     }
 
-    public Integer getOrdersLeftAfterGivenTimeByPartnerId(String time, String partnerId) {
+    public int getOrdersLeftAfterGivenTimeByPartnerId(String time, String partnerId) {
         List<String> list = orderRepository.getOrdersByPartnerId(partnerId);
         String [] clock = time.split(":");
         int totalTime = Integer.parseInt(clock[0])*60;
@@ -71,9 +71,5 @@ public class OrderService {
 
     public void deleteOrderById(String orderId) {
         orderRepository.deleteOrderById(orderId);
-    }
-
-    public boolean check(String partnerId) {
-        return getPartnerById(partnerId) != null;
     }
 }
