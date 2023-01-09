@@ -26,7 +26,6 @@ public class OrderRepository {
 
     public void addOrderPartnerPair(String orderId, String partnerId) {
         List<String> list = pairs.getOrDefault(partnerId, null);
-        assert list != null;
         list.add(orderId);
         Order order = orders.get(orderId);
         order.setPartner(partnerId);
