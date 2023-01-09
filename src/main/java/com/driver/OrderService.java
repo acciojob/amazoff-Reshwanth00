@@ -49,7 +49,7 @@ public class OrderService {
         totalTime+=Integer.parseInt(clock[1]);
         int count=0;
         for (String s : list) {
-            if (getOrderById(s).getDeliveryTime() < totalTime) {
+            if (getOrderById(s).getDeliveryTime() > totalTime) {
                 count++;
             }
         }
@@ -62,7 +62,26 @@ public class OrderService {
         for(int i=0;i<list.size();i++){
             lastTimeDelivered=Math.max(lastTimeDelivered,getOrderById(list.get(i)).getDeliveryTime());
         }
-        return Integer.toString(lastTimeDelivered);
+        String time ="";
+        int hour = lastTimeDelivered / 60;
+        String sHour = "";
+        if (hour < 10) {
+            sHour = "0" + String.valueOf(hour);
+        } else {
+            sHour = String.valueOf(hour);
+        }
+
+        int min = lastTimeDelivered % 60;
+        String sMin = "";
+        if (min < 10) {
+            sMin = "0" + String.valueOf(min);
+        } else {
+            sMin = String.valueOf(min);
+        }
+
+        time = sHour + ":" + sMin;
+
+        return time;
     }
 
     public void deletePartnerById(String partnerId) {
